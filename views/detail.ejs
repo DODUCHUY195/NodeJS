@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title><%= product.name %></title>
+    <style>
+        /* Các style chung khác */
+
+.product-detail-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.product-detail-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.product-detail-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.product-detail-info {
+    text-align: center;
+}
+
+.product-detail-info h1 {
+    margin: 0 0 10px;
+}
+
+.product-detail-info p {
+    margin: 5px 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="product-detail-container">
+        <a href="/list" class="back-link">Quay lại danh sách sản phẩm</a>
+        <div class="product-detail-card">
+            <img src="/uploads/<%= product.image %>" class="product-detail-image" alt="<%= product.name %>">
+            <div class="product-detail-info">
+                <h1><%= product.name %></h1>
+                <p><strong>Price:</strong> <%= product.price %> VNĐ</p>
+                <p><strong>Description:</strong> <%= product.description %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
